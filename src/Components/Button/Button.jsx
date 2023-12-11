@@ -1,7 +1,10 @@
-import React from 'react'
+import style from './Button.module.scss'
 
-export default function Button() {
+export default function Button(props) {
+  const {text}= props
   return (
-    <div>Button</div>
+    <div>
+      <button className={style.btn}>{text}</button>
+    </div>
   )
 }
