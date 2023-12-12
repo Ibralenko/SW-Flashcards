@@ -4,17 +4,23 @@
   max-width: 1800px;
   display: flex;
   background-color: #9da998;
+  align-items: center;
 }
-.container{
-  display: flex;
-}
-
 .navigation{
   display: flex;
 }
 .list{
   list-style-type: none;
+  display: flex;
+}
+.link{
+  text-decoration: none;
+  color: #282b27;
+  font-size: 25px;
+}
+.link:hover{
+  color: #5f6659;
 }
 .item{
-
+  margin-right: 30px;
 }
