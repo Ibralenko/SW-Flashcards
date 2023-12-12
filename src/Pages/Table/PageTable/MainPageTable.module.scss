@@ -10,7 +10,7 @@
   font-family: 'Qundeasy';
 }
 .page{
- max-width: 1200px;
+  max-width: 1200px;
 }
 table{
   margin-bottom: 7px;
@@ -21,8 +21,12 @@ table{
   border: 1px solid #9da998;
   border-radius: 3px;
   background: #9da998;
-  color: aliceblue;
+  color: rgb(12, 12, 12);
   margin-bottom: 7px;
+}
+.td:last-child{
+  background-color: transparent;
+  border: none;
 }
 .tr{
   display: flex;
@@ -33,15 +37,28 @@ table{
   border: none;
   background-color: #9da998;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 5px;
+  position: relative;
 }
 .btn:hover{
   opacity: 0.9;
+  border: 2px solid #757e72;
+}
+.btn::before{
+  content: '';
+  background-image: url(/src/assets/images/add-ico.png);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-size: cover;
+  right: 40px;
+  top: 4px;
 }
 .input{
   width: 297px;
   height: 25px;
   border: 1px solid #9da998;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-right: 3px;
+  margin-bottom: 10px;
 }

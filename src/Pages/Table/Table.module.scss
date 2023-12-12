@@ -6,3 +6,21 @@
   border: 1px solid #9da998;
   border-radius: 3px;
 }
+.td:last-child{
+  display: flex;
+  justify-content: space-around;
+}
+.ico{
+  width:20px;
+  height:20px;
+}
+.ico:hover{
+  opacity: 0.8;
+}
+.btn{
+  width:20px;
+  height:20px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
