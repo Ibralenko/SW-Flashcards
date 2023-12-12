@@ -1,7 +1,6 @@
 import Logo from '../Logo/Logo';
 import style from './Header.module.scss';
 import Button from '../Button/Button'
-import {Link} from 'react-router-dom';
 
 export default function Header() {
   return (
