@@ -6,9 +6,9 @@ export default function Footer() {
     <div>
       <footer className={s.footer}>
         <div className={s.container}>
-     <Logo />
-     <p>created by Julia Pavlenko</p>
-     </div>
+      <Logo />
+      <p className={s.text}>Created by <a className={s.link} href='https://github.com/Ibralenko'>Julia Pavlenko</a></p>
+      </div>
       </footer></div>
   )
 }

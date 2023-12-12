@@ -7,3 +7,16 @@
   justify-content: space-between;
   align-items: center;
 }
+.text{
+  font-size: 15px;
+  color: #4a5047;
+}
+.link{
+  color: #4a5047;
+  text-decoration: none;
+}
+.link:hover{
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.9;
+}

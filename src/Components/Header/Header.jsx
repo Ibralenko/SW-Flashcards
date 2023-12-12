@@ -1,5 +1,6 @@
 import Logo from '../Logo/Logo';
 import style from './Header.module.scss';
+import Button from '../Button/Button'
 
 
 export default function Header() {
@@ -17,6 +18,7 @@ export default function Header() {
             </ul>
           </nav>
         </div>
+        <div><Button text="Войти"></Button></div>
       </header>
       </div>
   )
