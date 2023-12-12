@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Beer';
+  src: url("../../assets/fonts/beer-money12.ttf");
+}
+
+
 .container{
   display: flex;
   justify-content: space-around;
@@ -10,4 +16,9 @@
 .image{
 width: 350px;
 height: 350px;
+}
+.title{
+  font-size: 30px;
+  color: #3e433c;
+  font-family: 'Beer';
 }

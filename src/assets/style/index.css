@@ -1,4 +1,10 @@
+@font-face {
+  font-family: 'Qundeasy';
+  src: url("../fonts/ds-eraser-cyr1.ttf");
+}
+
 body{
   margin: 0 auto;
   box-sizing: border-box;
+font-family: "Qundeasy";
 }

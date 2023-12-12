@@ -2,6 +2,8 @@ import data from '../../../Components/data.json'
 import Table from '../Table'
 import style from './MainPageTable.module.scss'
 
+
+
 export default function MainPageTable() {
   return (
     <div className={style.page}>

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Beer';
+  src: url("../../assets/fonts/beer-money12.ttf");
+}
+
 .footer{
   background-color: #9da998;
   max-width: 1800px;
@@ -14,6 +19,7 @@
 .link{
   color: #4a5047;
   text-decoration: none;
+  font-family: 'Beer';
 }
 .link:hover{
   font-size: 18px;

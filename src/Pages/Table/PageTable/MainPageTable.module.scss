@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'Qundeasy';
+  src: url("../../../assets/fonts/Qundeasy-Only-For-Personal-Use.ttf");
+}
+
+
 *{
+  font-size: 25px;
   margin: 0 auto;
+  font-family: 'Qundeasy';
 }
 .page{
  max-width: 1200px;
