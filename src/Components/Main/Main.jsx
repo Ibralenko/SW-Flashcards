@@ -1,7 +1,6 @@
 import style from './Main.module.scss'
 import Button from '../Button/Button'
-import MainPageTable from '../../Pages/Table/PageTable/MainPageTable'
-
+import ListOfWords from '../../Pages/ListOfWords/ListOfWords'
 
 export default function Main() {
   return (
@@ -11,7 +10,7 @@ export default function Main() {
       <Button text="Приступить!"/>
       <img className={style.image} src="/src/assets/images/online-learning.png" alt="" />
       </div>
-      <MainPageTable />
+      <ListOfWords />
       </div>
   )
 }

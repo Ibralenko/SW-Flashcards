@@ -1,10 +1,10 @@
-import data from '../../../Components/data.json'
-import Table from '../Table'
-import style from './MainPageTable.module.scss'
+import data from '../../Components/data.json'
+import Table from '../../Components/Table/Table'
+import style from './ListOfWords.module.scss'
 
 
 
-export default function MainPageTable() {
+export default function ListOfWords() {
   return (
     <div className={style.page}>
       <table >

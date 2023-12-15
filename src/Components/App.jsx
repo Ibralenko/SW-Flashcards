@@ -3,7 +3,7 @@ import Header from './Header/Header'
 import Main from './Main/Main'
 import Footer from './Footer/Footer'
 import {Routes, Route} from 'react-router-dom';
-import Table from '../Pages/Table/Table';
+import Table from './Table/Table';
 
 function App() {
 
