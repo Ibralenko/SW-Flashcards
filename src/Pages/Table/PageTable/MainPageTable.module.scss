@@ -1,13 +1,10 @@
-@font-face {
-  font-family: 'Qundeasy';
-  src: url("../../../assets/fonts/Qundeasy-Only-For-Personal-Use.ttf");
-}
 
+@import '../../../assets/style/vars';
 
 *{
   font-size: 25px;
   margin: 0 auto;
-  font-family: 'Qundeasy';
+  font-family: $font-table;
 }
 .page{
   max-width: 1200px;
@@ -34,8 +31,7 @@ table{
 .btn{
   width: 300px;
   height: 30px;
-  border: none;
-  background-color: #9da998;
+  border: 1px solid #9da998;
   cursor: pointer;
   border-radius: 5px;
   position: relative;
@@ -61,4 +57,7 @@ table{
   border-radius: 5px;
   margin-right: 3px;
   margin-bottom: 10px;
+}
+.input:hover{
+  background-color: #edfbed;
 }

@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'Beer';
-  src: url("../../assets/fonts/beer-money12.ttf");
-}
-
+@import '../../assets/style/vars';
 
 .btn{
   width: 130px;
@@ -12,7 +8,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Beer';
+  font-family: $font-logo;
   font-size: 20px;
 }
 .btn:hover{
