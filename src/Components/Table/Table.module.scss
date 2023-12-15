@@ -1,4 +1,9 @@
 
+@import '../../assets/style/vars';
+
+*{
+  font-family: $font-table;
+}
 
 .td{
   width: 300px;

@@ -1,12 +1,9 @@
-@font-face {
-  font-family: 'Qundeasy';
-  src: url("../fonts/ds-eraser-cyr1.ttf");
-}
+@import './_vars.scss';
 
 body{
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: "Qundeasy";
+  font-family: 'Qundeasy';
   background: linear-gradient(#f6f4f3, #eef9e8) fixed;
 
 }
