@@ -11,10 +11,10 @@
 }
 .text{
   font-size: 15px;
-  color: #4a5047;
+  color: $link-color;
 }
 .link{
-  color: #4a5047;
+  color: $link-color;
   text-decoration: none;
   font-family: $font-logo;
   font-size: 25px;

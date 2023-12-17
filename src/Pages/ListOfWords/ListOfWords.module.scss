@@ -15,9 +15,9 @@ table{
 .td{
   width: 300px;
   height: 30px;
-  border: 1px solid #9da998;
+  border: 1px solid $maingreen-color;
   border-radius: 3px;
-  background: #9da998;
+  background: $maingreen-color;
   color: rgb(12, 12, 12);
   margin-bottom: 7px;
 }
@@ -31,7 +31,7 @@ table{
 .btn{
   width: 300px;
   height: 30px;
-  border: 1px solid #9da998;
+  border: 1px solid $maingreen-color;
   cursor: pointer;
   border-radius: 5px;
   position: relative;
