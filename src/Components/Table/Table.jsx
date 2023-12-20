@@ -1,5 +1,6 @@
 import style from './Table.module.scss';
 
+
 export default function(props) {
   const {english, transcription, russian} = props;
   return (

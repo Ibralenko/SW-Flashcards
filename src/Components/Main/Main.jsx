@@ -1,8 +1,10 @@
 import style from './Main.module.scss'
 import Button from '../Button/Button'
 import ListOfWords from '../../Pages/ListOfWords/ListOfWords'
+import { useState } from 'react'
 
 export default function Main() {
+ 
   return (
     <div>
       <div className={style.container}>
