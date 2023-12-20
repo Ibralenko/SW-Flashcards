@@ -1,0 +1,30 @@
+@import '../../assets/style/vars';
+
+.card{
+  margin: 0 auto;
+  width: 400px;
+  height: 200px;
+  border: 1px solid $maingreen-color;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.word{
+margin-bottom: 20px;
+}
+.translate_none{
+  display: none;
+}
+.transcription{
+  margin-bottom: 20px;
+
+}
+.translate{
+  margin-bottom: 20px;
+
+}
+.button{
+  width: 200px;
+  height: 50px;
+}
