@@ -27,4 +27,11 @@ margin-bottom: 20px;
 .button{
   width: 200px;
   height: 50px;
+  background-color: $maingreen-color;
+  border: none;
+  cursor: pointer;
+}
+.button:hover{
+  opacity: 0.9;
+  border: 1px solid $link-color;
 }
