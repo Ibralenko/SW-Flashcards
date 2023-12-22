@@ -9,12 +9,14 @@ const showTranslate = () => {
 }
 
   return (
+    <>
     <div className={style.card}>
       <h3 className={style.word}>{item.english}</h3>
       <h3 className={style.transcription}>{item.transcription}</h3>
       <p className={translate? `${style.word}`: `${style.translate_none}`}>{item.russian}</p>
       <button className={style.button} onClick={showTranslate}>{translate? 'Скрыть перевод' : 'Показать перевод'}</button>
     </div>
+    </>
   )
 
 }

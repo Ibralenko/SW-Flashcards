@@ -1,9 +1,9 @@
 import '../assets/style/App.scss'
-import Header from './Header/Header'
-import Main from './Main/Main'
-import Footer from './Footer/Footer'
+import Header from '../Components/Header/Header'
+import Main from '../Components/Main/Main'
+import Footer from '../Components/Footer/Footer'
 import {Routes, Route} from 'react-router-dom';
-import Table from './Table/Table';
+import Table from '../Components/Table/Table';
 
 function App() {
 
