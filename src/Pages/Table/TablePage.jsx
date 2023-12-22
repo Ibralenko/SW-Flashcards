@@ -1,10 +1,10 @@
 import data from '../../Components/data.json'
 import Table from '../../Components/Table/Table'
-import style from './ListOfWords.module.scss'
+import style from './TablePage.module.scss'
 
 
 
-export default function ListOfWords() {
+export default function TablePage() {
   return (
     <div className={style.page}>
       <table >

@@ -1,7 +1,7 @@
 import style from './Main.module.scss'
 import Button from '../Button/Button'
-import ListOfWords from '../../Pages/ListOfWords/ListOfWords'
-import Cards from '../../Pages/Cards/Cards'
+import ListOfWords from '../../Pages/Table/TablePage'
+import Cards from '../../Pages/CardsPage/Cards'
 
 export default function Main() {
   return (
