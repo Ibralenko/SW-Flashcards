@@ -14,9 +14,9 @@ export default function(props) {
     <div>
       <table border="0">
         <tr>
-        <td className={style.td}>{english}</td>
-        <td className={style.td}>{transcription}</td>
-        <td className={style.td}><input type="text" value={editCard}/></td>
+        <td className={style.td}><input className={style.input} readOnly type="text" value={english}/></td>
+        <td className={style.td}><input className={style.input} readOnly type="text" value={transcription}/></td>
+        <td className={style.td}><input className={style.input} type="text" value={editCard}/></td>
         <td className={style.td }>
           <button onClick={editTranslate} className={style.btn}>
             <img className={style.ico} src='/src/assets/images/edit-ico.png' alt="редактировать" />
