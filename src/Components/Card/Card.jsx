@@ -9,19 +9,29 @@ export default function Card() {
     setTranslate(!translate);
   };
 
-let i = 0;
 
-const [count, setCount] = useState(data[i])
+const [index, setIndex] = useState(0)
 
-function on () {
-  i = 2;
+const [count, setCount] = useState(data[index])
+
+function next () {
+if (data[index] == undefined){
+  return alert('error')
+} else setIndex(index + 1)
+setCount(data[index])
 }
 
+function previous () {
+  if (index < 0){
+    return alert('error')
+  } else setIndex(index - 1)
+setCount(data[index])
+}
 
   return (
     <>
       <div className={style.card} key={count}>
-        <button className={style.left_array}></button>
+        <button onClick={previous} className={style.left_array}></button>
         <h3 className={style.word}>{count.english}</h3>
         <h3 className={style.transcription}>{count.transcription}</h3>
         <p className={translate ? `${style.word}` : `${style.translate_none}`}>
@@ -30,7 +40,7 @@ function on () {
         <button className={style.button} onClick={showTranslate}>
           {translate ? "Скрыть перевод" : "Показать перевод"}
         </button>
-        <button onClick={on} className={style.right_array}></button>
+        <button onClick={next} className={style.right_array}></button>
       </div>
     </>
   );
