@@ -3,7 +3,7 @@ import s from './Footer.module.scss'
 
 export default function Footer() {
   return (
-    <div>
+    <div  className={s.wrapper}>
       <footer className={s.footer}>
         <div className={s.container}>
       <Logo />
