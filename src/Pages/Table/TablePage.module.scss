@@ -30,7 +30,7 @@ table{
 }
 .btn{
   width: 300px;
-  height: 30px;
+  height: 33px;
   border: 1px solid $maingreen-color;
   cursor: pointer;
   border-radius: 5px;
@@ -52,12 +52,12 @@ table{
 }
 
 .input{
-  width: 297px;
-  height: 25px;
+  width: 290px;
+  height: 30px;
   border: 1px solid #9da998;
   border-radius: 5px;
-  margin-right: 3px;
   margin-bottom: 10px;
+  background-color: transparent;
 }
 .input:hover{
   background-color: #edfbed;

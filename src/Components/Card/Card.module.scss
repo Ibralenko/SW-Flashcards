@@ -1,6 +1,7 @@
 @import '../../assets/style/vars';
 
 .card{
+  position: relative;
   margin: 0 auto;
   width: 400px;
   height: 200px;
@@ -34,4 +35,18 @@ margin-bottom: 20px;
 .button:hover{
   opacity: 0.9;
   border: 1px solid $link-color;
+}
+.left_array{
+  height: 20px;
+  width: 50px;
+  position: absolute;
+  left: -100px;
+  top: 50%;
+}
+.right_array{
+  height: 20px;
+  width: 50px;
+  position: absolute;
+  right: -100px;
+  top: 50%;
 }
