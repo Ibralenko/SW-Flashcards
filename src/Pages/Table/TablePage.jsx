@@ -1,5 +1,4 @@
 import data from '../../Components/data.json'
-import Header from '../../Components/Header/Header'
 import Table from '../../Components/Table/Table'
 import style from './TablePage.module.scss'
 
