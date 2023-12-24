@@ -1,5 +1,7 @@
 @import '../../assets/style/vars';
 
+
+
 .container{
   display: flex;
   justify-content: space-around;
@@ -18,4 +20,22 @@ height: 350px;
   font-size: 30px;
   color: #3e433c;
   font-family: 'Qundeasy';
+}
+.btn{
+  background-color: $link-color;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  width: 200px;
+  height: 77px;
+  box-shadow: 12px 12px 2px 1px $maingreen-color;
+}
+.btn:hover{
+  opacity: 0.9;
+}
+
+.link{
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
 }

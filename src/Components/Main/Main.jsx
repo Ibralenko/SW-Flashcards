@@ -1,5 +1,4 @@
 import style from "./Main.module.scss";
-import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 
 export default function Main() {
@@ -11,7 +10,7 @@ export default function Main() {
           <br />
           Давай начнем изучать новые слова!
         </h4>
-        <Button text="Приступить!" ></Button>
+        <button className={style.btn}><Link className={style.link} to="game">Приступить</Link></button>
         <img
           className={style.image}
           src="/src/assets/images/online-learning.png"

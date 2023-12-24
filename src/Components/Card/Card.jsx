@@ -17,7 +17,7 @@ const [count, setCount] = useState(data[index])
 
 function next () {
 if (data[index] == undefined){
-  return blockBtn()
+  return alert('error')
 } else setIndex(index + 1)
 setCount(data[index])
 }
