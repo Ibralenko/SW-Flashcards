@@ -1,67 +1,52 @@
-@import "../../assets/style/vars";
+@import '../../assets/style/vars';
 
-
-
-.slider {
-  width: 250px;
-
-  &__track{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-  }
-}
-
-.card {
-  box-sizing: border-box;
+.card{
+  position: relative;
   margin: 0 auto;
-  height: 400px;
+  width: 400px;
+  height: 200px;
   border: 1px solid $maingreen-color;
   border-radius: 5px;
   text-align: center;
   padding: 20px;
   margin-bottom: 20px;
-  margin-right: 50px;
-  width: 500px;
 }
-.word {
-  font-size: 60px;
-  margin-bottom: 40px;
+.word{
+margin-bottom: 20px;
 }
-.translate_none {
+.translate_none{
   display: none;
 }
-.transcription {
-  font-size: 50px;
-  margin-bottom: 40px;
+.transcription{
+  margin-bottom: 20px;
+
 }
-.translate {
-  font-size: 30px;
-  margin-bottom: 40px;
+.translate{
+  margin-bottom: 20px;
+
 }
-.button {
+.button{
   width: 200px;
   height: 50px;
   background-color: $maingreen-color;
   border: none;
   cursor: pointer;
 }
-.button:hover {
+.button:hover{
   opacity: 0.9;
   border: 1px solid $link-color;
 }
-.left_array {
-  height: 30px;
+.left_array{
+  height: 20px;
   width: 50px;
   position: absolute;
-  left: 150px;
+  left: -100px;
   top: 50%;
 }
-.right_array {
-  height: 30px;
+.right_array{
+  height: 20px;
   width: 50px;
   position: absolute;
-  right: 150px;
+  right: -100px;
   top: 50%;
 }
