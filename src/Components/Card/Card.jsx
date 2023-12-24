@@ -1,5 +1,5 @@
 import style from "./Card.module.scss";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import data from "../data.json";
 
 export default function Card() {
@@ -14,9 +14,10 @@ const [index, setIndex] = useState(0)
 
 const [count, setCount] = useState(data[index])
 
+
 function next () {
 if (data[index] == undefined){
-  return alert('error')
+  return blockBtn()
 } else setIndex(index + 1)
 setCount(data[index])
 }
@@ -31,7 +32,7 @@ setCount(data[index])
   return (
     <>
       <div className={style.card} key={count}>
-        <button onClick={previous} className={style.left_arrow}>prev</button>
+        <button onClick={previous} className={style.left_arrow} >prev</button>
         <h3 className={style.word}>{count.english}</h3>
         <h3 className={style.transcription}>{count.transcription}</h3>
         <p className={translate ? `${style.word}` : `${style.translate_none}`}>
