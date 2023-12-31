@@ -5,6 +5,12 @@ import style from './TablePage.module.scss'
 
 
 export default function TablePage() {
+
+  const addNewWord = () => {
+     //собрать данные из интуптов, преобразовать их в JSON и добавить в data
+    console.log('add');
+  }
+
   return (
     <>
     <div className={style.page}>
@@ -18,7 +24,7 @@ export default function TablePage() {
       <tr className={style.tr}><input className={style.input} type="text" />
         <input className={style.input} type="text" />
         <input className={style.input} type="text" />
-        <button className={style.btn}>Добавить новое слово</button>
+        <button className={style.btn} onClick={addNewWord}>Добавить новое слово</button>
       </tr>
         {
         data.map((item)=>

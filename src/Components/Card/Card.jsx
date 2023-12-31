@@ -24,7 +24,7 @@ setCount(data[index])
 
 function previous () {
   if (index < 0){
-    return alert('error')
+    return index[index.length-1]
   } else setIndex(index - 1)
 setCount(data[index])
 }
