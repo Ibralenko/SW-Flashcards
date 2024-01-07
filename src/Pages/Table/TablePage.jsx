@@ -5,7 +5,6 @@ import style from "./TablePage.module.scss";
 import { useState, useEffect, useRef } from "react";
 
 export default function TablePage() {
-  const [words, setWords] = useState(data);
   const [inputWord, setInputWord] = useState("");
   const [inputTransription, setInputTransription] = useState("");
   const [inputTranslate, setInputTranslate] = useState("");
@@ -13,6 +12,9 @@ export default function TablePage() {
   let inputWordRef = useRef();
   let inputTransriptionRef = useRef();
   let inputTranslateRef = useRef();
+
+  const wordsLocal = localStorage.getItem("words");
+  const d = JSON.parse(wordsLocal);
 
   function addNewWord() {
     if (
@@ -25,13 +27,11 @@ export default function TablePage() {
         transcription: inputTransription,
         russian: inputTranslate,
       };
-      words.push(newWord);
-      console.log(words);
+      data.push(newWord);
       clearInputs();
       blockBtn();
-    } else return true;
-
-    //если инпуты пустык, нужно заблочить кнопку
+      localStorage.setItem("words", JSON.stringify(data));
+    } else return false;
   }
 
   const blockBtn = () => {
@@ -51,7 +51,7 @@ export default function TablePage() {
   }
 
   useEffect(() => {
-    console.log("rerender");
+    console.log("render");
     blockBtn();
     // ??????????????????????????????????????????????????????????????
   });
@@ -93,7 +93,15 @@ export default function TablePage() {
             Добавить новое слово
           </button>
         </tr>
-        {words.map((item, index) => (
+        {data.map((item, index) => (
+          <Table
+            english={item.english}
+            transcription={item.transcription}
+            russian={item.russian}
+            key={index}
+          ></Table>
+        ))}
+        {d.map((item, index) => (
           <Table
             english={item.english}
             transcription={item.transcription}
