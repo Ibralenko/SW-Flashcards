@@ -9,6 +9,7 @@ export default function TablePage() {
   const [inputWord, setInputWord] = useState("");
   const [inputTransription, setInputTransription] = useState("");
   const [inputTranslate, setInputTranslate] = useState("");
+  const btnRef = useRef();
   let inputWordRef = useRef();
   let inputTransriptionRef = useRef();
   let inputTranslateRef = useRef();
@@ -27,12 +28,20 @@ export default function TablePage() {
       words.push(newWord);
       console.log(words);
       clearInputs();
-    } else return alert("заполните поля");
+      blockBtn();
+    } else return true;
+
     //если инпуты пустык, нужно заблочить кнопку
   }
-  const btnRef = useRef();
+
   const blockBtn = () => {
-    console.log(btnRef.current);
+    if (
+      inputWordRef.current.value == "" ||
+      inputTransriptionRef.current.value == "" ||
+      inputTranslateRef.current.value == ""
+    ) {
+      btnRef.current.disabled = true;
+    } else return (btnRef.current.disabled = false);
   };
 
   function clearInputs() {
@@ -43,7 +52,9 @@ export default function TablePage() {
 
   useEffect(() => {
     console.log("rerender");
-  }, words);
+    blockBtn();
+    // ??????????????????????????????????????????????????????????????
+  });
 
   return (
     <>
