@@ -1,38 +1,49 @@
+import { json } from "react-router-dom";
 import data from "../../Components/data.json";
 import Table from "../../Components/Table/Table";
 import style from "./TablePage.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function TablePage() {
-  // const [value, setValue] = useState(true);
-
-  // const handleChangeTranslate = (event) => {
-  //   const values = event.target.value
-  //   setValue(values);
-  //   inputs.push(values)
-  //   console.log(values);
-  // };
-
-  // const inputs = [];
-
+  const [words, setWords] = useState(data);
   const [inputWord, setInputWord] = useState("");
   const [inputTransription, setInputTransription] = useState("");
   const [inputTranslate, setInputTranslate] = useState("");
+  let inputWordRef = useRef();
+  let inputTransriptionRef = useRef();
+  let inputTranslateRef = useRef();
 
   function addNewWord() {
-    const newWord = {
-      english: inputWord,
-      transcription: inputTransription,
-      russian: inputTranslate,
-    };
+    if (
+      inputWord.length !== 0 &&
+      inputTransription.length !== 0 &&
+      inputTranslate.length !== 0
+    ) {
+      const newWord = {
+        english: inputWord,
+        transcription: inputTransription,
+        russian: inputTranslate,
+      };
+      words.push(newWord);
+      console.log(words);
+      clearInputs();
+    } else return alert("заполните поля");
+    //если инпуты пустык, нужно заблочить кнопку
+  }
+  const btnRef = useRef();
+  const blockBtn = () => {
+    console.log(btnRef.current);
+  };
 
-    data.push(newWord);
-    console.log(data);
+  function clearInputs() {
+    inputWordRef.current.value = "";
+    inputTransriptionRef.current.value = "";
+    inputTranslateRef.current.value = "";
   }
 
   useEffect(() => {
     console.log("rerender");
-  }, [data]);
+  }, words);
 
   return (
     <>
@@ -47,32 +58,36 @@ export default function TablePage() {
         </table>
         <tr className={style.tr}>
           <input
+            ref={inputWordRef}
             className={style.input}
             type="text"
             value={inputWord}
             onChange={(event) => setInputWord(event.target.value)}
           />
           <input
+            ref={inputTransriptionRef}
             className={style.input}
             type="text"
             value={inputTransription}
             onChange={(event) => setInputTransription(event.target.value)}
           />
           <input
+            ref={inputTranslateRef}
             className={style.input}
             type="text"
             value={inputTranslate}
             onChange={(event) => setInputTranslate(event.target.value)}
           />
-          <button className={style.btn} onClick={addNewWord}>
+          <button ref={btnRef} className={style.btn} onClick={addNewWord}>
             Добавить новое слово
           </button>
         </tr>
-        {data.map((item) => (
+        {words.map((item, index) => (
           <Table
             english={item.english}
             transcription={item.transcription}
             russian={item.russian}
+            key={index}
           ></Table>
         ))}
       </div>
