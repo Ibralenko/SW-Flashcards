@@ -7,7 +7,7 @@ export default function CardsPage() {
 
   return (
     <div className={style.container}>
-     <Card />
+      <Card />
     </div>
   );
 }
