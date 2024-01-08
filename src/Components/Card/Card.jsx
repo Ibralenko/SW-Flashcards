@@ -8,25 +8,25 @@ export default function Card() {
   const showTranslate = () => {
     setTranslate(!translate);
   };
-
+  const wordsLocal = localStorage.getItem("words");
+  const dataLocal = JSON.parse(wordsLocal);
 
 const [index, setIndex] = useState(0)
-
-const [count, setCount] = useState(data[index])
+const [count, setCount] = useState(dataLocal[index])
 
 
 function next () {
-if (data[index] == undefined){
+if (dataLocal[index] == undefined){
   return alert('error')
 } else setIndex(index + 1)
-setCount(data[index])
+setCount(dataLocal[index])
 }
 
 function previous () {
   if (index < 0){
     return index[index.length-1]
   } else setIndex(index - 1)
-setCount(data[index])
+setCount(dataLocal[index])
 }
 
   return (

@@ -1,18 +1,18 @@
 import style from "./Table.module.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function (props) {
   const { english, transcription, russian } = props;
-
   const [editCard, setEditCard] = useState(russian);
+  const inputs = useRef();
 
   const editTranslate = (event) => {
     setEditCard(event.target.value);
   };
 
-  const cancelChanges = () => {
-    console.log("cancel");
-  };
+  function deleteWord() {
+    console.log("delete word");
+  }
 
   const saveChanges = () => {
     console.log("save");
@@ -33,6 +33,7 @@ export default function (props) {
                 className={style.ico}
                 src="/src/assets/images/edit-ico.png"
                 alt="редактировать"
+                //как-то сделать отмену нажатия этоцй кнопки?
               />
             </button>
             <div className={setEditCard ? `` : ``}>
@@ -55,7 +56,7 @@ export default function (props) {
                 />
               </button>
             </div>
-            <button className={style.btn}>
+            <button onClick={deleteWord} className={style.btn}>
               <img
                 className={style.ico}
                 src="/src/assets/images/delete-ico.png"
