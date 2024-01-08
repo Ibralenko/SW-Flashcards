@@ -13,12 +13,15 @@ export default function TablePage() {
   let inputTransriptionRef = useRef();
   let inputTranslateRef = useRef();
 
-  const dataLocal = JSON.parse(localStorage.getItem("words"));
   function checkLocal() {
-    if (dataLocal.length == 0) {
+    if (dataLocal == null) {
       return data;
     } else return dataLocal;
   }
+
+  const dataLocal = JSON.parse(localStorage.getItem("words"));
+
+  
 
   function addNewWord() {
     if (
@@ -34,6 +37,7 @@ export default function TablePage() {
       data.push(newWord);
       clearInputs();
       blockBtn();
+
       addDataToLocalStorage(newWord);
     } else return false;
   }
