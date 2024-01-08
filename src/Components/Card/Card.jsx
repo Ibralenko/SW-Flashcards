@@ -1,6 +1,5 @@
 import style from "./Card.module.scss";
 import React, { useRef, useState } from "react";
-import data from "../data.json";
 
 export default function Card() {
   const [translate, setTranslate] = useState(false);
@@ -21,6 +20,7 @@ if (dataLocal[index] == undefined){
 } else setIndex(index + 1)
 setCount(dataLocal[index])
 }
+//переделать на предыдущее зачение плюс или минус
 
 function previous () {
   if (index < 0){

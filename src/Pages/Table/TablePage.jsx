@@ -13,8 +13,12 @@ export default function TablePage() {
   let inputTransriptionRef = useRef();
   let inputTranslateRef = useRef();
 
-  const wordsLocal = localStorage.getItem("words");
-  const d = JSON.parse(wordsLocal);
+  const dataLocal = JSON.parse(localStorage.getItem("words"));
+  function checkLocal() {
+    if (dataLocal.length == 0) {
+      return data;
+    } else return dataLocal;
+  }
 
   function addNewWord() {
     if (
@@ -30,8 +34,18 @@ export default function TablePage() {
       data.push(newWord);
       clearInputs();
       blockBtn();
-      localStorage.setItem("words", JSON.stringify(data));
+      addDataToLocalStorage(newWord);
     } else return false;
+  }
+  function addDataToLocalStorage(data) {
+    let list = [];
+    try {
+      list = JSON.parse(localStorage.getItem("words"));
+    } catch (e) {
+      console.error(e);
+    }
+    list.push(data);
+    localStorage.setItem("words", JSON.stringify(list));
   }
 
   const blockBtn = () => {
@@ -53,9 +67,15 @@ export default function TablePage() {
   useEffect(() => {
     console.log("render");
     blockBtn();
+    checkLocal();
+    console.log(data);
+
     // ??????????????????????????????????????????????????????????????
   });
 
+  function deleteWord() {
+    console.log("delete");
+  }
 
   return (
     <>
@@ -94,15 +114,8 @@ export default function TablePage() {
             Добавить новое слово
           </button>
         </tr>
-        {data.map((item, index) => (
-          <Table
-            english={item.english}
-            transcription={item.transcription}
-            russian={item.russian}
-            key={index}
-          ></Table>
-        ))}
-        {d.map((item, index) => (
+
+        {dataLocal.map((item, index) => (
           <Table
             english={item.english}
             transcription={item.transcription}
