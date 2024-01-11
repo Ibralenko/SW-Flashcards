@@ -15,14 +15,11 @@ export default function TablePage() {
 
   function checkLocal() {
     if (dataLocal == null) {
-      return data;
+      return localStorage.setItem("words", JSON.stringify(data));
     } else return dataLocal;
   }
 
   const dataLocal = JSON.parse(localStorage.getItem("words"));
-
-  
-
   function addNewWord() {
     if (
       inputWord.length !== 0 &&
@@ -37,10 +34,10 @@ export default function TablePage() {
       data.push(newWord);
       clearInputs();
       blockBtn();
-
       addDataToLocalStorage(newWord);
     } else return false;
   }
+
   function addDataToLocalStorage(data) {
     let list = [];
     try {
@@ -73,12 +70,16 @@ export default function TablePage() {
     blockBtn();
     checkLocal();
     console.log(data);
-
-    // ??????????????????????????????????????????????????????????????
+    // ????перерисовка происходит при заполнении ипнутов, а нужно, чтобы при нажатии кнопки
   });
+
+  //нужно сделать так, чтобы данные из локалки тянулись всегда, когда локалка не пустая, в противном случае чтоб подгружался массив
 
   function deleteWord() {
     console.log("delete");
+  }
+  function saveChanges() {
+    console.log("save");
   }
 
   return (
