@@ -75,13 +75,6 @@ export default function TablePage() {
 
   //нужно сделать так, чтобы данные из локалки тянулись всегда, когда локалка не пустая, в противном случае чтоб подгружался массив
 
-  function deleteWord() {
-    console.log("delete");
-  }
-  function saveChanges() {
-    console.log("save");
-  }
-
   return (
     <>
       <div className={style.page}>

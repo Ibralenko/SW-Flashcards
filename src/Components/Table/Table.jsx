@@ -11,7 +11,7 @@ export default function (props) {
   };
 
   function deleteWord() {
-    console.log("delete word");
+   console.log('del');
   }
 
   const saveChanges = () => {
