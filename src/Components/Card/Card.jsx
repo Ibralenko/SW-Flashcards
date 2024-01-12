@@ -30,20 +30,14 @@ export default function Card(props) {
     setCount(dataLocal[index]);
   }
 
-
   //перезаписывается каждое слово в локалсторадж
   function saveLearnedWord() {
     const list = [];
-    try {
-      list = JSON.parse(localStorage.getItem("learnded"));
-    } catch (e) {
-      console.error(e);
-    }
+
     list.push(data[index]);
     localStorage.setItem("learnded", JSON.stringify(list));
     console.log(list);
   }
-
 
   return (
     <>
