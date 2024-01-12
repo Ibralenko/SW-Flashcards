@@ -2,7 +2,8 @@ import style from "./Card.module.scss";
 import React, { useRef, useState } from "react";
 import data from "../data.json";
 
-export default function Card() {
+export default function Card(props) {
+  const { english, transcription, russian } = props;
   const [translate, setTranslate] = useState(false);
 
   const showTranslate = () => {
@@ -29,12 +30,21 @@ export default function Card() {
     setCount(dataLocal[index]);
   }
 
+
+  //перезаписывается каждое слово в локалсторадж
   function saveLearnedWord() {
     const list = [];
+    try {
+      list = JSON.parse(localStorage.getItem("learnded"));
+    } catch (e) {
+      console.error(e);
+    }
     list.push(data[index]);
     localStorage.setItem("learnded", JSON.stringify(list));
     console.log(list);
   }
+
+
   return (
     <>
       <div className={style.card} key={count}>
