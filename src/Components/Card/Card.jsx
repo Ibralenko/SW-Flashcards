@@ -1,5 +1,6 @@
 import style from "./Card.module.scss";
 import React, { useRef, useState } from "react";
+import data from "../data.json";
 
 export default function Card() {
   const [translate, setTranslate] = useState(false);
@@ -28,11 +29,11 @@ export default function Card() {
     setCount(dataLocal[index]);
   }
 
-
-  function saveLearnedWord(){
-    // const list = []
-    // list.push()
-    // localStorage.setItem("learnded", JSON.stringify(list))
+  function saveLearnedWord() {
+    const list = [];
+    list.push(data[index]);
+    localStorage.setItem("learnded", JSON.stringify(list));
+    console.log(list);
   }
   return (
     <>
@@ -46,10 +47,12 @@ export default function Card() {
           {count.russian}
         </p>
         <div className={style.buttons}>
-        <button className={style.button} onClick={showTranslate}>
-          {translate ? "Скрыть перевод" : "Показать перевод"}
-        </button>
-        <button className={style.button}>Знаю слово</button>
+          <button className={style.button} onClick={showTranslate}>
+            {translate ? "Скрыть перевод" : "Показать перевод"}
+          </button>
+          <button className={style.button} onClick={saveLearnedWord}>
+            Знаю слово
+          </button>
         </div>
         <button onClick={next} className={style.right_arrow}>
           next

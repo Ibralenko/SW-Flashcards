@@ -27,7 +27,7 @@ export default function Header() {
                 </Link>
               </li>
               <li className={style.item}>
-                <Link className={style.link} to="/">
+                <Link className={style.link} to="/learned">
                   Изученное
                 </Link>
               </li>
