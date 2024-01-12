@@ -36,10 +36,15 @@
   background-color: $maingreen-color;
   border: none;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 .button:hover {
   opacity: 0.9;
   border: 1px solid $link-color;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
 }
 .left_arrow {
   height: 40px;

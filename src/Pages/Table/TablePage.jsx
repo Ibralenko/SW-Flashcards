@@ -15,7 +15,9 @@ export default function TablePage() {
 
   function checkLocal() {
     if (dataLocal == null) {
-      return localStorage.setItem("words", JSON.stringify(data));
+      return (
+      localStorage.setItem("words", JSON.stringify(data))
+      );
     } else return dataLocal;
   }
 
@@ -113,7 +115,7 @@ export default function TablePage() {
           </button>
         </tr>
 
-        {dataLocal.map((item, index) => (
+        {data.map((item, index) => (
           <Table
             english={item.english}
             transcription={item.transcription}
