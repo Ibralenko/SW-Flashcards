@@ -6,6 +6,9 @@ export default function Card(props) {
   const { english, transcription, russian } = props;
   const [translate, setTranslate] = useState(false);
 
+  const btnNextRef = useRef();
+  const btnPrevRef = useRef();
+
   const showTranslate = () => {
     setTranslate(!translate);
   };
@@ -16,24 +19,27 @@ export default function Card(props) {
   const [count, setCount] = useState(dataLocal[index]);
 
   function next() {
-    if (dataLocal[index] == undefined) {
-      return alert("error");
-    } else setIndex(index + 1);
+    if (dataLocal[index] == index[index.length - 1]) {
+      return (btnNextRef.current.disabled = true);
+    } else {
+      setIndex(index + 1)
+      btnPrevRef.current.disabled = false;}
     setCount(dataLocal[index]);
   }
   //переделать на предыдущее зачение плюс или минус
 
   function previous() {
-    if (index < 0) {
-      return index[index.length - 1];
-    } else setIndex(index - 1);
+    if (index <= 0) {
+      return (btnPrevRef.current.disabled = true); //функцию блока кнопки
+    } else {
+      btnNextRef.current.disabled = false;
+      setIndex(index - 1);
+    }
     setCount(dataLocal[index]);
   }
-
-  //перезаписывается каждое слово в локалсторадж
+  const list = [];
+  //перезаписывается каждое слово в лист??
   function saveLearnedWord() {
-    const list = [];
-
     list.push(data[index]);
     localStorage.setItem("learnded", JSON.stringify(list));
     console.log(list);
@@ -42,7 +48,11 @@ export default function Card(props) {
   return (
     <>
       <div className={style.card} key={count}>
-        <button onClick={previous} className={style.left_arrow}>
+        <button
+          ref={btnPrevRef}
+          onClick={previous}
+          className={style.left_arrow}
+        >
           prev
         </button>
         <h3 className={style.word}>{count.english}</h3>
@@ -58,7 +68,7 @@ export default function Card(props) {
             Знаю слово
           </button>
         </div>
-        <button onClick={next} className={style.right_arrow}>
+        <button ref={btnNextRef} onClick={next} className={style.right_arrow}>
           next
         </button>
       </div>
