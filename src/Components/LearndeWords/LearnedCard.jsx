@@ -20,7 +20,7 @@ export default function LearnedCard() {
   });
 
   return <div>
-  {dataLocal.map((item, index) => (
+  {data.map((item, index) => (
           <Table
             english={item.english}
             transcription={item.transcription}
