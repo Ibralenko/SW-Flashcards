@@ -20,7 +20,7 @@ export default function Card(props) {
 
   function next() {
     if (dataLocal[index] == index[index.length - 1]) {
-      return (btnNextRef.current.disabled = true); //(btnNextRef.current.disabled = true);
+      return (btnNextRef.current.disabled = true);
     } else {
       setIndex(index + 1);
       btnPrevRef.current.disabled = false;

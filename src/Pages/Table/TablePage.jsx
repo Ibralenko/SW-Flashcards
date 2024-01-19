@@ -12,7 +12,7 @@ export default function TablePage() {
   let inputWordRef = useRef();
   let inputTransriptionRef = useRef();
   let inputTranslateRef = useRef();
-
+//нужно добавить в состояние состояние блока кнопки, при его изменении, должен происходит перерендер из-за смены состояния
   function checkLocal() {
     if (dataLocal == null) {
       return (
