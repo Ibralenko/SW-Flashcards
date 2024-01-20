@@ -22,17 +22,18 @@ export default function TablePage() {
   const dataLocal = JSON.parse(localStorage.getItem("words"));
 
   function addNewWord() {
-      const newWord = {
-        english: inputWord,
-        transcription: inputTransription,
-        russian: inputTranslate,
-      };
-      data.push(newWord);
-      clearInputs();
-      addDataToLocalStorage(newWord);
-      blockBtn()
+    const newWord = {
+      english: inputWord,
+      transcription: inputTransription,
+      russian: inputTranslate,
+    };
+    data.push(newWord);
+    clearInputs();
+    addDataToLocalStorage(newWord);
+    blockBtn();
+
   }
-//кнопка не блокируется, потому что сразу же происходит перерендер и все обновлятся. Нужно сделать, чтоб происходил ререндер и вызывались функции очистки инпутов и блокировки кнопки
+  //кнопка не блокируется, потому что сразу же происходит перерендер и все обновлятся???????? Нужно сделать, чтоб происходил ререндер и вызывались функции очистки инпутов и блокировки кнопки
   function addDataToLocalStorage(data) {
     let list = [];
     try {
@@ -51,7 +52,10 @@ export default function TablePage() {
       inputTranslateRef.current.value == ""
     ) {
       return setDisabled(true);
-    } else return setDisabled(false);
+    } else {
+      setDisabled(false)
+      clearInputs();
+    }
   };
 
   function clearInputs() {
@@ -64,7 +68,6 @@ export default function TablePage() {
     console.log("render");
     blockBtn();
     checkLocal();
-    console.log(data);
   });
 
   //нужно сделать так, чтобы данные из локалки тянулись всегда, когда локалка не пустая, в противном случае чтоб подгружался массив
