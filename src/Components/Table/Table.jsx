@@ -19,7 +19,7 @@ export default function (props) {
 
   return (
     <div>
-      <table  border="0">
+      <table border="0">
         <tr>
           <td className={style.td}>{english}</td>
           <td className={style.td}>{transcription}</td>

@@ -13,21 +13,15 @@ export default function TablePage() {
   let inputWordRef = useRef();
   let inputTransriptionRef = useRef();
   let inputTranslateRef = useRef();
-  //нужно добавить в состояние состояние блока кнопки, при его изменении, должен происходит перерендер из-за смены состояния
 
   function checkLocal() {
     if (dataLocal == null) {
       return localStorage.setItem("words", JSON.stringify(data));
     } else return dataLocal;
   }
-
   const dataLocal = JSON.parse(localStorage.getItem("words"));
+
   function addNewWord() {
-    if (
-      inputWord.length !== 0 &&
-      inputTransription.length !== 0 &&
-      inputTranslate.length !== 0
-    ) {
       const newWord = {
         english: inputWord,
         transcription: inputTransription,
@@ -36,10 +30,9 @@ export default function TablePage() {
       data.push(newWord);
       clearInputs();
       addDataToLocalStorage(newWord);
-      setDisabled(true);
-    } else return false;
+      blockBtn()
   }
-
+//кнопка не блокируется, потому что сразу же происходит перерендер и все обновлятся. Нужно сделать, чтоб происходил ререндер и вызывались функции очистки инпутов и блокировки кнопки
   function addDataToLocalStorage(data) {
     let list = [];
     try {
@@ -58,7 +51,7 @@ export default function TablePage() {
       inputTranslateRef.current.value == ""
     ) {
       return setDisabled(true);
-    } else return  setDisabled(false);
+    } else return setDisabled(false);
   };
 
   function clearInputs() {
