@@ -8,16 +8,16 @@ export default function TablePage() {
   const [inputWord, setInputWord] = useState("");
   const [inputTransription, setInputTransription] = useState("");
   const [inputTranslate, setInputTranslate] = useState("");
+  const [isDisabled, setDisabled] = useState(true);
   const btnRef = useRef();
   let inputWordRef = useRef();
   let inputTransriptionRef = useRef();
   let inputTranslateRef = useRef();
-//нужно добавить в состояние состояние блока кнопки, при его изменении, должен происходит перерендер из-за смены состояния
+  //нужно добавить в состояние состояние блока кнопки, при его изменении, должен происходит перерендер из-за смены состояния
+
   function checkLocal() {
     if (dataLocal == null) {
-      return (
-      localStorage.setItem("words", JSON.stringify(data))
-      );
+      return localStorage.setItem("words", JSON.stringify(data));
     } else return dataLocal;
   }
 
@@ -35,8 +35,8 @@ export default function TablePage() {
       };
       data.push(newWord);
       clearInputs();
-      blockBtn();
       addDataToLocalStorage(newWord);
+      setDisabled(true);
     } else return false;
   }
 
@@ -57,8 +57,8 @@ export default function TablePage() {
       inputTransriptionRef.current.value == "" ||
       inputTranslateRef.current.value == ""
     ) {
-      btnRef.current.disabled = true;
-    } else return (btnRef.current.disabled = false);
+      return setDisabled(true);
+    } else return  setDisabled(false);
   };
 
   function clearInputs() {
@@ -72,7 +72,6 @@ export default function TablePage() {
     blockBtn();
     checkLocal();
     console.log(data);
-    // ????перерисовка происходит при заполнении ипнутов, а нужно, чтобы при нажатии кнопки
   });
 
   //нужно сделать так, чтобы данные из локалки тянулись всегда, когда локалка не пустая, в противном случае чтоб подгружался массив
@@ -110,7 +109,12 @@ export default function TablePage() {
             value={inputTranslate}
             onChange={(event) => setInputTranslate(event.target.value)}
           />
-          <button ref={btnRef} className={style.btn} onClick={addNewWord}>
+          <button
+            ref={btnRef}
+            className={style.btn}
+            onClick={addNewWord}
+            disabled={isDisabled}
+          >
             Добавить новое слово
           </button>
         </tr>

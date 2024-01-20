@@ -1,10 +1,9 @@
 import style from "./Table.module.scss";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function (props) {
   const { english, transcription, russian } = props;
   const [editCard, setEditCard] = useState(russian);
-  const inputs = useRef();
 
   const editTranslate = (event) => {
     setEditCard(event.target.value);
@@ -20,7 +19,7 @@ export default function (props) {
 
   return (
     <div>
-      <table border="0">
+      <table  border="0">
         <tr>
           <td className={style.td}>{english}</td>
           <td className={style.td}>{transcription}</td>
