@@ -23,7 +23,7 @@ export default function Header() {
               </li>
               <li className={style.item}>
                 <Link className={style.link} to="/table">
-                  Список слов
+                  К изучению
                 </Link>
               </li>
               <li className={style.item}>
