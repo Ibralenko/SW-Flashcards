@@ -27,7 +27,6 @@ export default function Card(props) {
     }
     setCount(dataLocal[index]);
   }
-  //переделать на предыдущее зачение плюс или минус
 
   function previous() {
     if (index <= 0) {
