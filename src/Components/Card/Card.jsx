@@ -22,7 +22,7 @@ export default function Card(props) {
     if (dataLocal[index] == index[index.length - 1]) {
       return (btnNextRef.current.disabled = true);
     } else {
-      setIndex(index + 1);
+      setIndex(prev => prev  + 1);
       btnPrevRef.current.disabled = false;
     }
     setCount(dataLocal[index]);
@@ -31,10 +31,10 @@ export default function Card(props) {
 
   function previous() {
     if (index <= 0) {
-      return (btnPrevRef.current.disabled = true); //функцию блока кнопки
+      return (btnPrevRef.current.disabled = true);
     } else {
       btnNextRef.current.disabled = false;
-      setIndex(index - 1);
+      setIndex(prev => prev  + 1);
     }
     setCount(dataLocal[index]);
   }
