@@ -33,12 +33,13 @@ export default function Card(props) {
       return (btnPrevRef.current.disabled = true);
     } else {
       btnNextRef.current.disabled = false;
-      setIndex(prev => prev  + 1);
+      setIndex(prev => prev - 1);
     }
     setCount(dataLocal[index]);
   }
+  //когда доходит до списка в локалсторэдж, не получается вернуться назад, возможно, потому что нет индекса
   const list = [];
-  //перезаписывается каждое слово в лист??
+  //перезаписывается каждое слово в лист??? если находишься  на одной карточке, то можно несколько слов добавлять , если карточку меняешь, то сразу же перезапись происходит в хранилище
   function saveLearnedWord() {
     list.push(data[index]);
     localStorage.setItem("learnded", JSON.stringify(list));

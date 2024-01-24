@@ -20,7 +20,7 @@ export default function TablePage() {
     } else return dataLocal;
   }
   const dataLocal = JSON.parse(localStorage.getItem("words"));
-//в локалсторэдж больше 300 слов, в карточках все отображается, нужно почистить
+
   function addNewWord() {
     const newWord = {
       english: inputWord,
