@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 import data from "../data.json";
 
 export default function Card(props) {
-  const { english, transcription, russian } = props;
   const [translate, setTranslate] = useState(false);
 
   const btnNextRef = useRef();
