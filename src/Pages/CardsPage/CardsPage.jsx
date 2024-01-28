@@ -1,4 +1,3 @@
-import data from "../../Components/data.json";
 import Card from "../../Components/Card/Card";
 import style from "./CardsPage.module.scss";
 
