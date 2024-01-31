@@ -64,7 +64,7 @@ export default function Card(props) {
           <button className={style.button} onClick={showTranslate}>
             {translate ? "Скрыть перевод" : "Показать перевод"}
           </button>
-          <button className={style.button} onClick={saveLearnedWord}>
+          <button className={style.button} onClick={props.addToCart}>
             Знаю слово
           </button>
         </div>
