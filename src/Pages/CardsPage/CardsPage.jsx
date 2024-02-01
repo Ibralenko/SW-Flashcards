@@ -3,15 +3,14 @@ import style from "./CardsPage.module.scss";
 import { useState } from "react";
 
 export default function CardsPage() {
-  const [itemsInCart, setItemsInCart] = useState(0)
+  const [itemsInCart, setItemsInCart] = useState(0);
 
   const addToCart = () => {
-    setItemsInCart(itemsInCart + 1)
-}
+    setItemsInCart(itemsInCart + 1);
+  };
   return (
     <div className={style.container}>
-                      <p>Вы выучили {itemsInCart} слов</p>
-
+      <p className={style.counter}>Вы выучили {itemsInCart} слов</p>
       <Card addToCart={addToCart} />
     </div>
   );

@@ -9,13 +9,13 @@ export default function (props) {
     setEditCard(event.target.value);
   };
 
-  // function deleteWord() {
-  //   console.log("del");
-  // }
+  function deleteWord() {
+    console.log("del");
+  }
 
-  // const saveChanges = () => {
-  //   console.log("save");
-  // };
+  const saveChanges = () => {
+    console.log("save");
+  };
 
   return (
     <div>
