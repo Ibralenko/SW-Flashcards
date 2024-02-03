@@ -1,5 +1,5 @@
 import style from "./Table.module.scss";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 export default function (props) {
   const { english, transcription, russian } = props;
@@ -32,7 +32,6 @@ export default function (props) {
                 className={style.ico}
                 src="/src/assets/images/edit-ico.png"
                 alt="редактировать"
-                //как-то сделать отмену нажатия этоцй кнопки?
               />
             </button>
             <div className={setEditCard ? `` : ``}>

@@ -10,7 +10,11 @@ export default function Main() {
           <br />
           Давай начнем изучать новые слова!
         </h4>
-        <button className={style.btn}><Link className={style.link} to="game">Приступить</Link></button>
+        <button className={style.btn}>
+          <Link className={style.link} to="game">
+            Приступить
+          </Link>
+        </button>
         <img
           className={style.image}
           src="/src/assets/images/online-learning.png"

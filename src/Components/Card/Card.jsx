@@ -21,7 +21,7 @@ export default function Card(props) {
     if (dataLocal[index] == index[index.length - 1]) {
       return (btnNextRef.current.disabled = true);
     } else {
-      setIndex(prev => prev  + 1);
+      setIndex((prev) => prev + 1);
       btnPrevRef.current.disabled = false;
     }
     setCount(dataLocal[index]);
@@ -32,7 +32,7 @@ export default function Card(props) {
       return (btnPrevRef.current.disabled = true);
     } else {
       btnNextRef.current.disabled = false;
-      setIndex(prev => prev - 1);
+      setIndex((prev) => prev - 1);
     }
     setCount(dataLocal[index]);
   }
@@ -44,7 +44,7 @@ export default function Card(props) {
     localStorage.setItem("learnded", JSON.stringify(list));
     console.log(list);
   }
-
+  //можно добавить только одно слово
   return (
     <>
       <div className={style.card} key={count}>
