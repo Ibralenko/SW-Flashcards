@@ -21,24 +21,19 @@ export default function Card(props) {
   };
 
   const dataLocal = JSON.parse(localStorage.getItem("words") || data);
-
   const [count, setCount] = useState(dataLocal[index]);
 
   function next() {
-    if (dataLocal[index] == index[index.length - 1]) {
-      return (btnNextRef.current.disabled = true);
-    } else {
-      setIndex((prev) => prev + 1);
-      btnPrevRef.current.disabled = false;
-    }
-    setCount(dataLocal[index]);
-  }
+   if (index < dataLocal.length -1){
+    setIndex(index + 1)
+   }
+  };
 
   function previous() {
     if (index < 0) {
       setIndex(index - 1);
     }
-  }
+  };
 
   function saveLearnedWord() {
     const word = dataLocal[index];
