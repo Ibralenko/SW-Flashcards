@@ -1,20 +1,27 @@
 import style from "./Card.module.scss";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import data from "../data.json";
 
 export default function Card(props) {
   const [translate, setTranslate] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [learnedWords, setLearnedWords] = useState(
+    new Set(JSON.parse(localStorage.getItem("learnedWords") || "[]"))
+  );
 
   const btnNextRef = useRef();
   const btnPrevRef = useRef();
 
+  useEffect(() => {
+    setTranslate(false);
+  }, [index]);
+
   const showTranslate = () => {
     setTranslate(!translate);
   };
-  const wordsLocal = localStorage.getItem("words");
-  const dataLocal = JSON.parse(wordsLocal);
 
-  const [index, setIndex] = useState(0);
+  const dataLocal = JSON.parse(localStorage.getItem("words") || data);
+
   const [count, setCount] = useState(dataLocal[index]);
 
   function next() {
@@ -28,23 +35,26 @@ export default function Card(props) {
   }
 
   function previous() {
-    if (index <= 0) {
-      return (btnPrevRef.current.disabled = true);
-    } else {
-      btnNextRef.current.disabled = false;
-      setIndex((prev) => prev - 1);
+    if (index < 0) {
+      setIndex(index - 1);
     }
-    setCount(dataLocal[index]);
   }
-  //когда доходит до списка в локалсторэдж, не получается вернуться назад, возможно, потому что нет индекса
-  const list = [];
-  //перезаписывается каждое слово в лист??? если находишься  на одной карточке, то можно несколько слов добавлять , если карточку меняешь, то сразу же перезапись происходит в хранилище
+
   function saveLearnedWord() {
-    list.push(data[index]);
-    localStorage.setItem("learnded", JSON.stringify(list));
-    console.log(list);
+    const word = dataLocal[index];
+    if (!learnedWords.has(word.english)) {
+      const newLearnedWords = new Set(learnedWords.add(word.english));
+      setLearnedWords(newLearnedWords);
+      localStorage.setItem(
+        "learnedWords",
+        JSON.stringify([...newLearnedWords]));
+      props.addToCart();
+    }
   }
-  //можно добавить только одно слово
+  useEffect(() => {
+    setCount(dataLocal[index]);
+  }, [index, dataLocal]);
+
   return (
     <>
       <div className={style.card} key={count}>
@@ -64,7 +74,7 @@ export default function Card(props) {
           <button className={style.button} onClick={showTranslate}>
             {translate ? "Скрыть перевод" : "Показать перевод"}
           </button>
-          <button className={style.button} onClick={props.addToCart}>
+          <button className={style.button} onClick={saveLearnedWord}>
             Знаю слово
           </button>
         </div>
