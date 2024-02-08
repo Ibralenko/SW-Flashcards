@@ -1,28 +1,28 @@
-@import '../../assets/style/vars';
+@import "../../assets/style/vars";
 
-.wrapper{
-  
+.wrapper {
 }
-.footer{
-  background: linear-gradient( #9da998 2%,#b4c0b0 35%, #c5d4bf 60%, #e9f2e6 90%);
+.footer {
+  margin-top: 70px;
+  background: linear-gradient(#9da998 2%, #b4c0b0 35%, #c5d4bf 60%, #e9f2e6 90%);
   max-width: 1800px;
 }
-.container{
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.text{
+.text {
   font-size: 15px;
   color: $link-color;
 }
-.link{
+.link {
   color: $link-color;
   text-decoration: none;
   font-family: $font-logo;
   font-size: 25px;
 }
-.link:hover{
+.link:hover {
   font-size: 27px;
   cursor: pointer;
   opacity: 0.9;
