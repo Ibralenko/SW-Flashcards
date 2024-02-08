@@ -1,13 +1,12 @@
-//сделать таблицу общим компонентом и получать данные из локалки по сохраненным словам
 import { useEffect } from "react";
 import data from "../data.json";
 
 export default function LearnedCard() {
-  const dataLocal = JSON.parse(localStorage.getItem("learned"));
+  const dataLocal = JSON.parse(localStorage.getItem("learnedWords"));
 
   function checkLocal() {
     if (dataLocal == null) {
-      return localStorage.setItem("learnded", JSON.stringify(data));
+      return localStorage.setItem("learndedWords", JSON.stringify(data));
     } else return dataLocal;
   }
 
@@ -18,7 +17,7 @@ export default function LearnedCard() {
 
   return (
     <div>
-      {data.map((item, index) => (
+      {dataLocal.map((item, index) => (
         <Table
           english={item.english}
           transcription={item.transcription}

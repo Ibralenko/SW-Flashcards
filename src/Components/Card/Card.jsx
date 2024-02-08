@@ -8,7 +8,7 @@ export default function Card(props) {
   const [learnedWords, setLearnedWords] = useState(
     new Set(JSON.parse(localStorage.getItem("learnedWords") || "[]"))
   );
-
+const btnRef =useRef()
   const btnNextRef = useRef();
   const btnPrevRef = useRef();
 
@@ -24,16 +24,16 @@ export default function Card(props) {
   const [count, setCount] = useState(dataLocal[index]);
 
   function next() {
-   if (index < dataLocal.length -1){
-    setIndex(index + 1)
-   }
-  };
+    if (index < dataLocal.length - 1) {
+      setIndex(index + 1);
+    }
+  }
 
   function previous() {
     if (index < 0) {
       setIndex(index - 1);
     }
-  };
+  }
 
   function saveLearnedWord() {
     const word = dataLocal[index];
@@ -42,13 +42,14 @@ export default function Card(props) {
       setLearnedWords(newLearnedWords);
       localStorage.setItem(
         "learnedWords",
-        JSON.stringify([...newLearnedWords]));
+        JSON.stringify([...newLearnedWords])
+      );
       props.addToCart();
     }
   }
   useEffect(() => {
     setCount(dataLocal[index]);
-  }, [index, dataLocal]);
+  }, [index]);
 
   return (
     <>
@@ -69,7 +70,7 @@ export default function Card(props) {
           <button className={style.button} onClick={showTranslate}>
             {translate ? "Скрыть перевод" : "Показать перевод"}
           </button>
-          <button className={style.button} onClick={saveLearnedWord}>
+          <button ref={btnRef} className={style.button} onClick={saveLearnedWord}>
             Знаю слово
           </button>
         </div>
