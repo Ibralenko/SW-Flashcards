@@ -30,7 +30,7 @@ const btnRef =useRef()
   }
 
   function previous() {
-    if (index < 0) {
+    if (index > 0) {
       setIndex(index - 1);
     }
   }
