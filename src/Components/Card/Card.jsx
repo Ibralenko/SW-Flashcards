@@ -26,13 +26,13 @@ const btnRef =useRef()
   function next() {
     if (index < dataLocal.length - 1) {
       setIndex(index + 1);
-    }
+    } //else  btnNextRef.current.disabled = true
   }
 
   function previous() {
     if (index > 0) {
       setIndex(index - 1);
-    }
+    } //else btnPrevRef.current.disabled = true
   }
 
   function saveLearnedWord() {
@@ -70,7 +70,7 @@ const btnRef =useRef()
           <button className={style.button} onClick={showTranslate}>
             {translate ? "Скрыть перевод" : "Показать перевод"}
           </button>
-          <button ref={btnRef} className={style.button} onClick={saveLearnedWord}>
+          <button ref={btnRef} className={saveLearnedWord? `${style.button_hide}` : `${style.button}`} onClick={saveLearnedWord}>
             Знаю слово
           </button>
         </div>
