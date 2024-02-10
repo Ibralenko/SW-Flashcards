@@ -1,0 +1,11 @@
+@import '../../assets/style/vars';
+
+.container{
+  margin: 0 auto;
+  max-width: 600px;
+}
+.words{
+  text-align: center;
+  font-family: $font-logo;
+  font-size: 40px;
+}
