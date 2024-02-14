@@ -31,7 +31,6 @@ export default function TablePage() {
     clearInputs();
     addDataToLocalStorage(newWord);
     blockBtn();
-
   }
   //кнопка не блокируется, потому что сразу же происходит перерендер и все обновлятся???????? Нужно сделать, чтоб происходил ререндер и вызывались функции очистки инпутов и блокировки кнопки
   function addDataToLocalStorage(data) {
@@ -53,7 +52,7 @@ export default function TablePage() {
     ) {
       return setDisabled(true);
     } else {
-      setDisabled(false)
+      setDisabled(false);
       clearInputs();
     }
   };
