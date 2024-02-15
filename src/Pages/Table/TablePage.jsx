@@ -9,6 +9,9 @@ export default function TablePage() {
   const [inputTransription, setInputTransription] = useState("");
   const [inputTranslate, setInputTranslate] = useState("");
   const [isDisabled, setDisabled] = useState(true);
+
+
+
   const btnRef = useRef();
   let inputWordRef = useRef();
   let inputTransriptionRef = useRef();
@@ -32,7 +35,7 @@ export default function TablePage() {
     addDataToLocalStorage(newWord);
     blockBtn();
   }
-  //кнопка не блокируется, потому что сразу же происходит перерендер и все обновлятся???????? Нужно сделать, чтоб происходил ререндер и вызывались функции очистки инпутов и блокировки кнопки
+
   function addDataToLocalStorage(data) {
     let list = [];
     try {
@@ -68,8 +71,6 @@ export default function TablePage() {
     blockBtn();
     checkLocal();
   });
-
-  //нужно сделать так, чтобы данные из локалки тянулись всегда, когда локалка не пустая, в противном случае чтоб подгружался массив
 
   return (
     <>

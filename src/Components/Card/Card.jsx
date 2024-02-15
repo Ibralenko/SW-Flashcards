@@ -1,7 +1,6 @@
 import style from "./Card.module.scss";
 import React, { useEffect, useRef, useState } from "react";
 import data from "../data.json";
-import GET from "../../Services/GET";
 
 export default function Card(props) {
   const [translate, setTranslate] = useState(false);
@@ -9,15 +8,9 @@ export default function Card(props) {
   const [learnedWords, setLearnedWords] = useState(
     new Set(JSON.parse(localStorage.getItem("learnedWords") || "[]"))
   );
-  const [words , setWords] = useState(false)
   const btnRef = useRef();
   const btnNextRef = useRef();
   const btnPrevRef = useRef();
-
-async function getWordsServer() {
-const wordsServer = await GET.getWords()
-setWords(wordsServer)
-}
 
   useEffect(() => {
     setTranslate(false);
