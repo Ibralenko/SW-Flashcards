@@ -73,7 +73,7 @@ export default function Card(props) {
           <button
             ref={btnRef}
             className={
-              saveLearnedWord ? `${style.button}` : `${style.button_hide}`
+              saveLearnedWord ? `${style.button}` : `${style.button}`
             }
             onClick={saveLearnedWord}
           >

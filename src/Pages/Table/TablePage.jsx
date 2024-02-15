@@ -10,8 +10,6 @@ export default function TablePage() {
   const [inputTranslate, setInputTranslate] = useState("");
   const [isDisabled, setDisabled] = useState(true);
 
-
-
   const btnRef = useRef();
   let inputWordRef = useRef();
   let inputTransriptionRef = useRef();
