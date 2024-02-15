@@ -25,5 +25,15 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
     "vite": "^5.0.0"
+  },
+  "proxy": {
+    "/search": {
+      "target": "https://www.google.com",
+      "changeOrigin": true
+    },
+    "/api": {
+      "target": "http://itgirlschool.justmakeit.ru",
+      "changeOrigin": true
+    }
   }
 }

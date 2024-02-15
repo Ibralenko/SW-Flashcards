@@ -1,6 +1,7 @@
 import style from "./Card.module.scss";
 import React, { useEffect, useRef, useState } from "react";
 import data from "../data.json";
+import GET from "../../Services/GET";
 
 export default function Card(props) {
   const [translate, setTranslate] = useState(false);
@@ -8,9 +9,15 @@ export default function Card(props) {
   const [learnedWords, setLearnedWords] = useState(
     new Set(JSON.parse(localStorage.getItem("learnedWords") || "[]"))
   );
-const btnRef =useRef()
+  const [words , setWords] = useState(false)
+  const btnRef = useRef();
   const btnNextRef = useRef();
   const btnPrevRef = useRef();
+
+async function getWordsServer() {
+const wordsServer = await GET.getWords()
+setWords(wordsServer)
+}
 
   useEffect(() => {
     setTranslate(false);
@@ -70,7 +77,13 @@ const btnRef =useRef()
           <button className={style.button} onClick={showTranslate}>
             {translate ? "Скрыть перевод" : "Показать перевод"}
           </button>
-          <button ref={btnRef} className={saveLearnedWord? `${style.button_hide}` : `${style.button}`} onClick={saveLearnedWord}>
+          <button
+            ref={btnRef}
+            className={
+              saveLearnedWord ? `${style.button_hide}` : `${style.button}`
+            }
+            onClick={saveLearnedWord}
+          >
             Знаю слово
           </button>
         </div>
