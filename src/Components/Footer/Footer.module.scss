@@ -1,11 +1,10 @@
 @import "../../assets/style/vars";
 
-.wrapper {
-}
+
 .footer {
   margin-top: 70px;
   background: linear-gradient(#9da998 2%, #b4c0b0 35%, #c5d4bf 60%, #e9f2e6 90%);
-  max-width: 1800px;
+  max-width: 1900px;
 }
 .container {
   display: flex;
@@ -29,6 +28,6 @@
 }
 @media screen and (max-width: 800px) {
   .footer {
-width: 800px;
+    width: 800px;
   }
 }

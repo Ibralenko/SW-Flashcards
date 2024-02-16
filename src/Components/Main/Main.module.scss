@@ -1,8 +1,6 @@
-@import '../../assets/style/vars';
+@import "../../assets/style/vars";
 
-
-
-.container{
+.container {
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
@@ -12,16 +10,16 @@
   height: 100vh;
 }
 
-.image{
-width: 350px;
-height: 350px;
+.image {
+  width: 350px;
+  height: 350px;
 }
-.title{
+.title {
   font-size: 30px;
   color: #3e433c;
-  font-family: 'Qundeasy';
+  font-family: "Qundeasy";
 }
-.btn{
+.btn {
   background-color: $link-color;
   border-radius: 7px;
   cursor: pointer;
@@ -30,11 +28,11 @@ height: 350px;
   height: 77px;
   box-shadow: 12px 12px 2px 1px $maingreen-color;
 }
-.btn:hover{
+.btn:hover {
   opacity: 0.9;
 }
 
-.link{
+.link {
   text-decoration: none;
   color: white;
   font-size: 40px;

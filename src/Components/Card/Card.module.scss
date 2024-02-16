@@ -78,4 +78,10 @@
 .button_hide{
 visibility: hidden;
 }
+@media screen and (max-width: 964px) {
+
+  .card {
+    width: 300px;
+  }
+}
 

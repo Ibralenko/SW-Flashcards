@@ -1,7 +1,7 @@
-@import '../../assets/style/vars';
+@import "../../assets/style/vars";
 
-.btn{
-  width: 130px;
+.btn {
+  width: 100px;
   height: 40px;
   background-color: $maingreen-color;
   color: black;
@@ -10,8 +10,8 @@
   cursor: pointer;
   font-family: $font-logo;
   font-size: 20px;
-  margin-right: 50px;
+  margin-right: 5px;
 }
-.btn:hover{
-opacity: 0.8;
+.btn:hover {
+  opacity: 0.8;
 }

@@ -1,20 +1,19 @@
+@import "../../assets/style/vars";
 
-@import '../../assets/style/vars';
-
-*{
+* {
   font-size: 25px;
   margin: 0 auto;
   font-family: $font-table;
 }
-.page{
+.page {
   margin-top: 20px;
-  max-width: 900px;
+  max-width: 1200px;
 }
-table{
+table {
   margin-bottom: 7px;
 }
-.td{
-  width: 300px;
+.td {
+  min-width: 300px;
   height: 30px;
   border: 1px solid $maingreen-color;
   border-radius: 3px;
@@ -22,27 +21,28 @@ table{
   color: rgb(12, 12, 12);
   margin-bottom: 7px;
 }
-.td:last-child{
+.td:last-child {
   background-color: transparent;
   border: none;
 }
-.tr{
+.tr {
   display: flex;
 }
-.btn{
+.btn {
   width: 300px;
   height: 33px;
   border: 1px solid $maingreen-color;
   cursor: pointer;
   border-radius: 5px;
   position: relative;
+  color: black;
 }
-.btn:hover{
+.btn:hover {
   opacity: 0.9;
   border: 2px solid #757e72;
 }
-.btn::before{
-  content: '';
+.btn::before {
+  content: "";
   background-image: url(/src/assets/images/add-ico.png);
   width: 20px;
   height: 20px;
@@ -52,14 +52,57 @@ table{
   top: 4px;
 }
 
-.input{
-  width: 290px;
+.input {
+  min-width: 150px;
+  max-width: 290px;
   height: 30px;
   border: 1px solid #9da998;
   border-radius: 5px;
   margin-bottom: 10px;
   background-color: transparent;
 }
-.input:hover{
+.input:hover {
   background-color: #edfbed;
-};
+}
+@media screen and (max-width: 900px) {
+  .td {
+    min-width: 250px;
+  }
+  .page {
+    max-width: 800px;
+  }
+  .td {
+    width: 200px;
+  }
+  .input {
+    width: 290px;
+    height: 37px;
+  }
+  .btn {
+    width: 400px;
+    height: 40px;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .td {
+    min-width: 200px;
+    margin-right: 10px;
+  }
+  .page {
+    max-width: 500px;
+  }
+  .td {
+    width: 200px;
+  }
+  .input {
+    max-width: 290px;
+    height: 37px;
+    margin-right: 20px;
+  }
+  .btn {
+    min-width: 200px;
+    height: 40px;
+    font-size: 10px;
+  }
+}

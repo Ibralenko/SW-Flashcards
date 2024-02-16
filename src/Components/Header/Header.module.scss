@@ -1,7 +1,8 @@
 @import "../../assets/style/vars";
 
 .header {
-  max-width: 1800px;
+  min-width: 700px;
+  max-width: 1900px;
   display: flex;
   background: linear-gradient(#e9f2e6, #c5d4bf, #b4c0b0, #9da998) right;
   align-items: center;
@@ -35,9 +36,6 @@
   }
 }
 @media screen and (max-width: 800px) {
-  .header {
-    width: 800px;
-  }
   .link {
     font-size: 21px;
   }
