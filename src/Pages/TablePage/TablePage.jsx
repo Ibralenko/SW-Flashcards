@@ -1,4 +1,3 @@
-import { json } from "react-router-dom";
 import data from "../../Components/data.json";
 import Table from "../../Components/Table/Table";
 import style from "./TablePage.module.scss";

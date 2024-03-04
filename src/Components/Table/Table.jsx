@@ -4,13 +4,14 @@ import { useState } from "react";
 export default function (props) {
   const { english, transcription, russian } = props;
   const [editCard, setEditCard] = useState(russian);
+const [words, setWords] = useState(props)
 
   const editTranslate = (event) => {
     setEditCard(event.target.value);
   };
 
   function deleteWord() {
-    console.log("del");
+    setWords((prevWords) => prevWords.filter((word) => word.id !== id));
   }
 
   const saveChanges = () => {
