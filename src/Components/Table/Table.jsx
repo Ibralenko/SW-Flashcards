@@ -11,7 +11,7 @@ const [words, setWords] = useState(props)
   };
 
   function deleteWord() {
-    setWords((prevWords) => prevWords.filter((word) => word.id !== id));
+    //setWords((prevWords) => prevWords.filter((word) => word.id !== id));
   }
 
   const saveChanges = () => {
