@@ -4,17 +4,16 @@ import { useState } from "react";
 export default function (props) {
   const { english, transcription, russian } = props;
   const [editCard, setEditCard] = useState(russian);
-const [words, setWords] = useState(props)
 
-  const editTranslate = (event) => {
+  const handleEditTranslate = (event) => {
     setEditCard(event.target.value);
   };
 
-  function deleteWord() {
+  function handleDeleteWord() {
     //setWords((prevWords) => prevWords.filter((word) => word.id !== id));
   }
 
-  const saveChanges = () => {
+  const handleSaveChanges = () => {
     console.log("save");
   };
 
@@ -28,7 +27,7 @@ const [words, setWords] = useState(props)
             <input className={style.input} type="text" value={editCard} />
           </td>
           <td className={style.td}>
-            <button onClick={editTranslate} className={style.btn}>
+            <button onClick={handleEditTranslate} className={style.btn}>
               <img
                 className={style.ico}
                 src="/src/assets/images/edit-ico.png"
@@ -46,7 +45,7 @@ const [words, setWords] = useState(props)
                 />
               </button>
               <button
-                className={editCard ? `${style.btn_none}` : `${style.btn}`}
+                onClick={handleSaveChanges} className={editCard ? `${style.btn_none}` : `${style.btn}`}
               >
                 <img
                   className={style.ico}
@@ -55,7 +54,7 @@ const [words, setWords] = useState(props)
                 />
               </button>
             </div>
-            <button onClick={deleteWord} className={style.btn}>
+            <button onClick={handleDeleteWord} className={style.btn}>
               <img
                 className={style.ico}
                 src="/src/assets/images/delete-ico.png"
