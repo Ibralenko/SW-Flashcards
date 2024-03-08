@@ -19,14 +19,14 @@ export default function (props) {
 
   return (
     <div>
-      <table border="0">
-        <tr>
-          <td className={style.td}>{english}</td>
-          <td className={style.td}>{transcription}</td>
-          <td className={style.td}>
+      <div border="0">
+        <div className={style.table_list}>
+          <div className={style.td}>{english}</div>
+          <div className={style.td}>{transcription}</div>
+          <div className={style.td}>
             <input className={style.input} type="text" value={editCard} />
-          </td>
-          <td className={style.td}>
+          </div>
+          <div className={style.td}>
             <button onClick={handleEditTranslate} className={style.btn}>
               <img
                 className={style.ico}
@@ -61,9 +61,9 @@ export default function (props) {
                 alt="удалить"
               />
             </button>
-          </td>
-        </tr>
-      </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

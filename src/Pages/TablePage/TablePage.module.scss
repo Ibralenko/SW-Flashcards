@@ -64,6 +64,9 @@ table {
 .input:hover {
   background-color: #edfbed;
 }
+.table_title{
+  display: flex;
+}
 @media screen and (max-width: 900px) {
   .td {
     min-width: 250px;

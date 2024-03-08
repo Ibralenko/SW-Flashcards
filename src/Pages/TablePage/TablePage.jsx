@@ -72,15 +72,13 @@ export default function TablePage() {
   return (
     <>
       <div className={style.page}>
-        <table>
-          <tr>
-            <th className={style.td}>Слово</th>
-            <th className={style.td}>Транскрипция</th>
-            <th className={style.td}>Перевод</th>
-            <th className={style.td}></th>
-          </tr>
-        </table>
-        <tr className={style.tr}>
+        <div className={style.table_title}>
+          <div className={style.td}>Слово</div>
+          <div className={style.td}>Транскрипция</div>
+          <div className={style.td}>Перевод</div>
+          <div className={style.td}></div>
+        </div>
+        <div className={style.table_addWords}>
           <input
             ref={inputWordRef}
             className={style.input}
@@ -110,7 +108,7 @@ export default function TablePage() {
           >
             Добавить новое слово
           </button>
-        </tr>
+        </div>
 
         {data.map((item, index) => (
           <Table
