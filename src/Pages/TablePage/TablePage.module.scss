@@ -13,7 +13,7 @@ table {
   margin-bottom: 7px;
 }
 .td {
-  min-width: 300px;
+  min-width: 290px;
   height: 30px;
   border: 1px solid $maingreen-color;
   border-radius: 3px;
@@ -54,13 +54,14 @@ table {
 }
 
 .input {
-  min-width: 150px;
+  min-width: 270px;
   max-width: 290px;
   height: 30px;
   border: 1px solid #9da998;
   border-radius: 5px;
   margin-bottom: 10px;
   background-color: transparent;
+  margin-right: 20px;
 }
 .input:hover {
   background-color: #edfbed;
